@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Dosicount{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { text-align: center; margin: 2em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #f51d8b; padding: 2px 6px; }
+    .error {color: red}
+
+</style>
+
+<div class="example-wrapper">
+            <h1>Bienvenue sur Dosicount</h1>
+                    <h1>Connexion</h1>
+    {% if error %}
+        <span> class="error">{{ error.messageKey }}</span>
+    {% endif %}
+
+    <form action="{{ path('/') }}" method="post">
+        <input type="text" name="_username" value="{{ last_username }}" placeholder="Nom d'utilisateur...">
+
+        <input type="password" name="_password">
+
+        <button type="submit">Login</button>
+
+    </form>
+{% endblock %}

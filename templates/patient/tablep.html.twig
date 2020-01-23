@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Patients {% endblock %}
+
+{% block body %}
+    <examen>
+        <h2> Patients </h2>
+        <div>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Nom patient, n° sécu">
+                <button class="btn btn-secondary my-2 my-sm-0" type="submit">Rechercher</button>
+            </form>
+        </div>
+        <div class="content">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">Nom</th>
+                    <th scope="col">Prenom</th>
+                    <th scope="col">N° sécurité sociale</th>
+                    <th scope="col">Date naissance</th>
+                    <th scope="col">Date dernier acte</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="table-active">
+                    <th scope="row">Dupond</th>
+                    <td>Matthieu</td>
+                    <td>01 65 03 69 688 596 765 12</td>
+                    <td>12/03/1995</td>
+                    <td>23/01/2020</td>
+                </tr>
+                <tr class="table">
+                    <th scope="row">Henry</th>
+                    <td>Paul</td>
+                    <td>01 76 07 67 999 532 123 56</td>
+                    <td>22/07/1976</td>
+                    <td>12/12/2019</td>
+                </tr>
+                </tbody>
+            </table>
+            <a href="{{ path('new_patient') }}" class=""btn btn-primary">Nouveau patient</a>
+        </div>
+    </examen>
+{% endblock %}
